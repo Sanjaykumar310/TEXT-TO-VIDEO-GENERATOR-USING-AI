@@ -46,7 +46,6 @@ REST_FRAMEWORK = {
     ]
 }
 
-MONGO_URI = "mongodb+srv://saivamshi6220:12345@clusterblueplanet.uc15rk.mongodb.net/?retryWrites=true&w=majority&appName=ClusterBluePlanet"
 MIDDLEWARE = [
     'django.middleware.security.SecurityMiddleware',
     'django.contrib.sessions.middleware.SessionMiddleware',

@@ -1,9 +1,9 @@
 from pymongo import MongoClient
-from django.conf import settings
+from decouple import config
 from gridfs import GridFS
 
 def get_mongo_client():
-    return MongoClient(settings.MONGO_URI)
+    return MongoClient(config("MONGO_URI"))
 
 def get_db(db_name="text_to_video_db"):
     return get_mongo_client()[db_name]

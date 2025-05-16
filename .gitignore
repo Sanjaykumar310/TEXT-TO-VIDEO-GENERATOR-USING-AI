@@ -9,6 +9,9 @@ __pycache__/
 # python env
 TexttoVideo.*
 
+# secrets
+.env
+
 # Distribution / packaging
 .Python
 build/
