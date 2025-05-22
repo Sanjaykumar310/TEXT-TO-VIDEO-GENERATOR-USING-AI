@@ -1,3 +1,12 @@
+import dj_database_url
+from decouple import config
+import os
+
+# SECRET_KEY = config('SECRET_KEY')
+# DEBUG = config('DEBUG', default=False, cast=bool)
+ALLOWED_HOSTS = ['https://blueplanettexttovideo.onrender.com', 'localhost']
+BASE_API_URL ='https://blueplanettexttovideo.onrender.com'
+
 """
 Django settings for Backend project.
 
@@ -25,7 +34,6 @@ SECRET_KEY = 'django-insecure-&br44q+122s3#sm1p8!s=k1a+c7$(bit$*k0_$l(-b(j*)kh(_
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = []
 
 
 # Application definition
