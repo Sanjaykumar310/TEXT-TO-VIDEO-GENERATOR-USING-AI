@@ -2,8 +2,7 @@ import streamlit as st
 from gtts import gTTS
 from io import BytesIO
 import requests
-from pydub import AudioSegment
-
+from mutagen.mp3 import MP3
 
 st.set_page_config(page_title="Script to Audio", layout="wide")
 st.title("📝 Write Your Script")
@@ -34,14 +33,17 @@ if st.button("📤 Save Script & Upload Audio"):
         audio_io.seek(0)
 
         try:
-            debug_check = AudioSegment.from_file(audio_io, format="mp3")
-            st.success(f"✅ Audio generated, length: {debug_check.duration_seconds:.2f} seconds")
+            # ✅ Get audio duration using mutagen (no ffmpeg required)
+            audio_bytes = audio_io.getvalue()
+            audio_file_like = BytesIO(audio_bytes)
+            audio = MP3(audio_file_like)
+            duration_sec = audio.info.length
+            st.success(f"✅ Audio generated, length: {duration_sec:.2f} seconds")
         except Exception as e:
             st.error(f"❌ gTTS generated invalid audio: {e}")
-            st.stop() 
+            st.stop()
 
         audio_io.seek(0)  # 🔁 rewind AGAIN before upload
-
 
         # ✅ Upload to Django backend
         files = {

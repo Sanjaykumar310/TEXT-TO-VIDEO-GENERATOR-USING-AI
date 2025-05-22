@@ -7,6 +7,10 @@ from moviepy.editor import (
 import tempfile
 import os
 import random
+import imageio_ffmpeg
+
+os.environ["IMAGEIO_FFMPEG_EXE"] = imageio_ffmpeg.get_ffmpeg_exe()
+
 
 st.set_page_config(page_title="🎬 Preview Video", layout="wide")
 st.title("🎞️ Preview Your Video")
