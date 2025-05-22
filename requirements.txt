@@ -1,3 +1,12 @@
-django>=5.0
-djangorestframework>=3.14
-pymongo>=4.6
+django
+djangorestframework
+pymongo
+streamlit
+gtts
+requests
+pydub
+Pillow
+python-dotenv
+imageio[ffmpeg]
+mutagen
+python-decouple
