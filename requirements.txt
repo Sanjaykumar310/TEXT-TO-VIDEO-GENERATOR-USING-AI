@@ -1,3 +1,19 @@
+
+django
+djangorestframework
+pymongo
+streamlit
+gtts
+requests
+pydub
+Pillow
+python-dotenv
+imageio[ffmpeg]
+mutagen
+python-decouple
+gunicorn
+
+# other dependencies
 absl-py==2.2.0
 aioice==0.9.0
 aiortc==1.10.1
