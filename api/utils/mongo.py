@@ -1,13 +1,10 @@
 from pymongo import MongoClient
-import streamlit as st
-# Use the below import for local use
-# from decouple import config
+import os
 from gridfs import GridFS
 
 def get_mongo_client():
-    # return MongoClient(config("MONGO_URI"))
-    mongo_uri = st.secrets["MONGODB_URI"]
-    return MongoClient(mongo_uri)
+    MONGO_URI = os.environ.get("MONGO_URI")
+    return MongoClient(MONGO_URI)
 
 def get_db(db_name="text_to_video_db"):
     return get_mongo_client()[db_name]
