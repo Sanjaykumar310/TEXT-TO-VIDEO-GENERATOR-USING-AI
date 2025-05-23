@@ -2,7 +2,7 @@ from decouple import config
 
 SECRET_KEY = config('SECRET_KEY')
 DEBUG = config('DEBUG', default=False, cast=bool)
-ALLOWED_HOSTS = ['blueplanettexttovideo.onrender.com', 'localhost']
+ALLOWED_HOSTS = ['localhost', '127.0.0.1', 'blueplanettexttovideo.onrender.com']
 BASE_API_URL ='https://blueplanettexttovideo.onrender.com'
 
 """
