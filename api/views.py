@@ -93,6 +93,9 @@ def delete_batch(request, batch_id):
     # Delete batch record
     db["batches"].delete_one({"batch_id": batch_id})
 
+    db["script"].delete_one({"batch_id": batch_id})
+
+
     return Response({"status": "deleted", "batch_id": batch_id})
 
 @api_view(['GET'])
@@ -127,6 +130,8 @@ def cleanup_inactive_batches(request):
         # Delete all files with this batch_id
         for file in fs.find({"metadata.batch_id": batch_id}):
             fs.delete(file._id)
+
+        db["script"].delete_one({"batch_id": batch_id})
 
         # Delete the batch record itself
         db["batches"].delete_one({"batch_id": batch_id})
