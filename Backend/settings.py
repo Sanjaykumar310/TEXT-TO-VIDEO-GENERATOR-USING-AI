@@ -1,9 +1,8 @@
 import dj_database_url
 from decouple import config
-import os
 
-# SECRET_KEY = config('SECRET_KEY')
-# DEBUG = config('DEBUG', default=False, cast=bool)
+SECRET_KEY = config('SECRET_KEY')
+DEBUG = config('DEBUG', default=False, cast=bool)
 ALLOWED_HOSTS = ['https://blueplanettexttovideo.onrender.com', 'localhost']
 BASE_API_URL ='https://blueplanettexttovideo.onrender.com'
 
@@ -29,10 +28,10 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 # See https://docs.djangoproject.com/en/5.2/howto/deployment/checklist/
 
 # SECURITY WARNING: keep the secret key used in production secret!
-SECRET_KEY = 'django-insecure-&br44q+122s3#sm1p8!s=k1a+c7$(bit$*k0_$l(-b(j*)kh(_'
+# SECRET_KEY = 'django-insecure-&br44q+122s3#sm1p8!s=k1a+c7$(bit$*k0_$l(-b(j*)kh(_'
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = True
+# DEBUG = True
 
 
 
