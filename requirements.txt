@@ -6,7 +6,7 @@ streamlit
 gtts
 requests
 pydub
-Pillow
+Pillow==9.5.0
 python-dotenv
 imageio[ffmpeg]
 mutagen
