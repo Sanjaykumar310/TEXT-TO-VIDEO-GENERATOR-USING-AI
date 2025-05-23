@@ -6,6 +6,7 @@ from mutagen.mp3 import MP3
 
 st.set_page_config(page_title="Script to Audio", layout="wide")
 st.title("📝 Write Your Script")
+API_BASE = st.secrets["api_base"]
 
 # ✅ Ensure session data is available
 if "video_duration" not in st.session_state or "batch_id" not in st.session_state:
@@ -55,7 +56,7 @@ if st.button("📤 Save Script & Upload Audio"):
             "batch_id": batch_id
         }
 
-        res = requests.post("http://127.0.0.1:8000/api/save-script/", files=files, data=data)
+        res = requests.post(f"{API_BASE}/save-script/", files=files, data=data)
 
         if res.status_code == 200:
             st.success("✅ Script and audio successfully uploaded!")

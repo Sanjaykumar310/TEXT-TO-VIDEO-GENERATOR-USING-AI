@@ -14,6 +14,7 @@ os.environ["IMAGEIO_FFMPEG_EXE"] = imageio_ffmpeg.get_ffmpeg_exe()
 
 st.set_page_config(page_title="🎬 Preview Video", layout="wide")
 st.title("🎞️ Preview Your Video")
+API_BASE = st.secrets["api_base"]
 
 # Session Check
 if "batch_id" not in st.session_state:
@@ -21,9 +22,9 @@ if "batch_id" not in st.session_state:
     st.stop()
 
 batch_id = st.session_state["batch_id"]
-LIST_API = f"http://127.0.0.1:8000/api/list-images/{batch_id}/"
-GET_IMAGE_API = "http://127.0.0.1:8000/api/get-image/"
-GET_AUDIO_API = f"http://127.0.0.1:8000/api/get-audio/{batch_id}/"
+LIST_API = f"{API_BASE}/list-images/{batch_id}/"
+GET_IMAGE_API = f"{API_BASE}/get-image/"
+GET_AUDIO_API = f"{API_BASE}/get-audio/{batch_id}/"
 
 # Get images
 res = requests.get(LIST_API)
@@ -127,7 +128,7 @@ if st.button("🎬 Generate Video"):
 # ✅ Clean up
 st.title("✅ Final Step: Clean Up Session Data")
 if st.button("Finished"):
-    DELETE_URL = f"http://127.0.0.1:8000/api/delete-batch/{batch_id}/"
+    DELETE_URL = f"{API_BASE}/delete-batch/{batch_id}/"
     res = requests.delete(DELETE_URL)
     if res.status_code == 200:
         st.success(f"Batch {batch_id} deleted.")

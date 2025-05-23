@@ -7,6 +7,7 @@ from io import BytesIO
 
 st.set_page_config(page_title="Show Uploaded Images", layout="wide")
 st.title("🖼️ Uploaded Images for Your Session")
+API_BASE = st.secrets["api_base"]
 
 
 # ✅ Ensure batch_id exists
@@ -17,8 +18,8 @@ if "batch_id" not in st.session_state:
 batch_id = st.session_state["batch_id"]
 
 # 🔗 Django API endpoints
-LIST_API = f"http://127.0.0.1:8000/api/list-images/{batch_id}/"
-GET_IMAGE_API = "http://127.0.0.1:8000/api/get-image/"
+LIST_API = f"{API_BASE}/list-images/{batch_id}/"
+GET_IMAGE_API = f"{API_BASE}/get-image/"
 
 # 🧠 Fetch list of images from Django
 try:

@@ -6,8 +6,8 @@ st.set_page_config(page_title="Upload Folder", layout="wide")
 st.title("📁 Upload Folder of Images")
 
 batch_id = st.session_state.get("batch_id")
-
-API_URL = "http://127.0.0.1:8000/api/upload-folder/"
+API_BASE = st.secrets["api_base"]
+API_URL = f"{API_BASE}/upload-folder/"
 
 # Track upload state
 if "has_uploaded" not in st.session_state:
