@@ -7,7 +7,7 @@ st.title("📽️ Welcome to the Text-to-Video Project")
 
 # 🔁 Cleanup inactive batches older than 1 hour
 try:
-    API_BASE = st.secrets["api_base"]
+    API_BASE ="http://127.0.0.1:8000/api"
     response = requests.post(f"{API_BASE}/cleanup-inactive-batches/")
     if response.status_code == 200:
         result = response.json()

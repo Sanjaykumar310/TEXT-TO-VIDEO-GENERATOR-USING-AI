@@ -7,7 +7,7 @@ from io import BytesIO
 
 st.set_page_config(page_title="Show Uploaded Images", layout="wide")
 st.title("🖼️ Uploaded Images for Your Session")
-API_BASE = st.secrets["api_base"]
+API_BASE ="http://127.0.0.1:8000/api"
 
 
 # ✅ Ensure batch_id exists

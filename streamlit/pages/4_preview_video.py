@@ -14,7 +14,7 @@ os.environ["IMAGEIO_FFMPEG_EXE"] = imageio_ffmpeg.get_ffmpeg_exe()
 
 st.set_page_config(page_title="🎬 Preview Video", layout="wide")
 st.title("🎞️ Preview Your Video")
-API_BASE = st.secrets["api_base"]
+API_BASE ="http://127.0.0.1:8000/api"
 
 # Session Check
 if "batch_id" not in st.session_state:

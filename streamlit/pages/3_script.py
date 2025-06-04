@@ -6,7 +6,7 @@ from mutagen.mp3 import MP3
 
 st.set_page_config(page_title="Script to Audio", layout="wide")
 st.title("📝 Write Your Script")
-API_BASE = st.secrets["api_base"]
+API_BASE ="http://127.0.0.1:8000/api"
 
 # ✅ Ensure session data is available
 if "video_duration" not in st.session_state or "batch_id" not in st.session_state:
