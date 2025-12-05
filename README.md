@@ -151,7 +151,10 @@ This project is licensed under the **MIT License**. You are free to use, modify,
 
 ## 📬 Contact
 
-**Sanjay Kumar S**
-📧 [kumar185694@gmail.com](mailto:kumar185694@gmail.com)
+    Sanjay Kumar S
+
+    Gmail ID :📧 [kumar185694@gmail.com](mailto:kumar185694@gmail.com)
+
 📍 Chennai, India
+
 🎓 B.Tech Artificial Intelligence and Data Science, Panimalar Engineering College Chennai
